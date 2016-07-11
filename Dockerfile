@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 RUN echo '\n\ndeb http://ppa.launchpad.net/swi-prolog/devel/ubuntu xenial main\ndeb-src http://ppa.launchpad.net/swi-prolog/devel/ubuntu xenial main' >> /etc/apt/sources.list
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 73E75048FF27533C0D8DC521EF8406856DBFCA18
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 73E75048FF27533C0D8DC521EF8406856DBFCA18
 RUN apt-get update && apt-get install -y git swi-prolog
 RUN git clone https://github.com/SWI-Prolog/pengines
 # Expose the default port for pengines
