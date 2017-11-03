@@ -8,5 +8,5 @@ EXPOSE 3030
 # Set the pengines admin account to admin:admin
 RUN echo 'admin:$1$vUXiHMJy$DI1JHDLqTytUYGTHicJvE0' >>/pengines/passwd
 WORKDIR /pengines
-ENTRYPOINT ["/usr/bin/swipl"]
-CMD ["-q","run.pl"]
+ENTRYPOINT ["swipl"]
+CMD ["daemon.pl","--port=3030","--fork=false"]
